@@ -32,3 +32,10 @@ class Triangle{
     * (Number(result.AB) + Number(result.BC) - Number(result.CA)) , 0.5)).toFixed(2)
   }
 }
+
+// to check
+let a = new Point(-1, 3)
+let b = new Point(2, 4)
+let c = new Point(5, 7)
+let triangle = new Triangle(a,b,c)
+console.log(triangle.getArea()) // must be 2.97
