@@ -12,7 +12,7 @@ class Triangle{
     this.pointC = pointC;
   }
 
-  getSide = (point1, point2) => (Math.pow(Math.pow(point2[0] - point1[0], 2) + Math.pow(point2[1] - point1[1], 2), 0.5).toFixed(2))
+  getSide = (point1, point2) => (Math.pow(Math.pow(point2.x - point1.x, 2) + Math.pow(point2.y - point1.y, 2), 0.5).toFixed(2))
 
   getAllSides = () => {return {AB : this.getSide(this.pointA, this.pointB),
                                 BC : this.getSide(this.pointB, this.pointC),
