@@ -1,4 +1,4 @@
-const task = () => setTimeout(() => console.log('Test'), 7000)
+const task = () => setTimeout(() => 'Test', 7000)
 
 const antiOptimizeAsync = (task) => new Promise((resolve) => setTimeout(() => resolve(task()), 1500))
 
