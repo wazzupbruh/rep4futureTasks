@@ -11,4 +11,20 @@ const waitForPromise = async (promise, action) => {
 console.log(waitForPromise(promise, action))
 
 //ex2
+let promise = new Promise((resolve) => resolve('resolve'))
+
+const consumer = (str) => console.log(str + ' consumer')
+
+const handler = 'an error'
+
+const consumePromise = async (promise, consumer, handler) => {
+  try{
+    let a = await promise
+    consumer(a)
+  }catch(handler){
+    console.log(handler)
+  }
+}
+
+console.log(consumePromise(promise, consumer, handler))
 
