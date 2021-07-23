@@ -8,5 +8,7 @@ const waitForPromise = async (promise, action) => {
   await action(a)
 }
 
+console.log(waitForPromise(promise, action))
+
 //ex2
 
