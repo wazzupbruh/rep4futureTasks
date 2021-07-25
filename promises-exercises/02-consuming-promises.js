@@ -7,5 +7,5 @@ const waitForPromise = async (promise, action) => {
 //ex2
 const consumePromise = (promise, consumer, handler) => {
   promise.then(result => consumer(result)).catch(err => handler(err))
- }
+}
 
