@@ -1,10 +1,6 @@
 //ex1 
 function passwordCheckerPrms(email, password){
-  return new Promise((resolve, reject) => {
-    passwordCheckerCb(email, password, (error, user) => {
-      email.includes(password) ? resolve(user) : reject(error);
-    });
-  });
+  return new Promise((resolve, reject) => passwordCheckerCb(email, password, (error, user) => email.includes(password) ? resolve(user) : reject(error)));
 }
 
 //ex2
