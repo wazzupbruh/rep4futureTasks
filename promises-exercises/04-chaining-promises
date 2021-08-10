@@ -1,0 +1,22 @@
+//ex1
+function flatMapPromise(promise, asyncTransformer){
+  return new Promise((resolve, reject) => {
+    promise
+      .then(result => resolve(asyncTransformer(result)), result => reject(result));
+    
+  });
+}
+
+//ex2
+function chainTwoAsyncProcesses(firstPromise, slowAsyncProcess){
+  return firstPromise.then(result => slowAsyncProcess(result));
+}
+
+//ex3
+function makeGetUserByIdWithOrganization(getUserById, getOrganizationById){
+  return async function getUserByIdWithOrganization(userId){
+    let a = await getUserById(userId)
+    if(a != undefined) a.organization = await getOrganizationById(a.organizationId)
+    return a;
+  };
+}
