@@ -9,8 +9,5 @@ function passwordCheckerPrms(email, password){
 
 //ex2
 function makePromiseFromFunctionWithCallback(fn, ...fnParams){
-  return new Promise((resolve, reject) => {
-    fn(...fnParams, (...fnParams) => fnParams.forEach(el => el !== null) ? resolve(fnParams) : reject('Boo!');       
-    )
-  })
+  return new Promise((resolve, reject) => fn(...fnParams, (err, res) => res ? resolve(res) : reject(err)));
 }
